@@ -10,24 +10,35 @@
     <body>
         <div id="root"></div>
         <script type="text/babel">
-            function Header() {
+            function Header(props) {
                 return (
                     <header>
-                        <h1> Nazim's Application </h1>
+                        <h1> {props.name}'s Application </h1>
                     </header>
                 );
             }
-            function Main() {
+            function Main(props) {
                 return (
                     <section> 
-                        <p> Comprehensive blog detailed my personal experiences. </p>
+                        <p> Comprehensive blog detailed my {props.adjective} experiences. </p>
                     </section>
                     );
             }
+
+            function Footer(props) {
+                return (
+                    <footer>
+                        <p> Copyright {props.year} </p>
+                        </footer>
+                );
+            }
+
             function App () {
                 return (
                     <div>
-                    <Header /> <Main /> 
+                    <Header name="Nazim"/> 
+                    <Main adjective="personal"/>
+                    <Footer year={new Date().getFullYear()}/> 
                 </div>
                 );
             }
