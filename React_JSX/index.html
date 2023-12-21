@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin> </script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <title>React </title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            /*let ul = React.createElement("ul", { style: {color: "blue" } }, 
+                React.createElement("li", null, "We"),
+                React.createElement("li", null, "Need"),
+                React.createElement("li", null, "JSX"));*/
+{           let item1 = "Item1";
+            let item2 = "Item2";
+            let item3 = "Item3"
+            let name = "React";
+            ReactDOM.render(
+            <ul>
+                <li>{item1}</li>
+                <li>{item2}</li>
+                <li>{item3}</li>
+                <li>{name.toUpperCase()}</li>
+                <li>{name.length}</li>
+            </ul>, 
+            document.getElementById("root"));}
+        </script>
+    </body>
+</html>
