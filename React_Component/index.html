@@ -56,14 +56,14 @@
             );
             function App() {
                 return (
-                    <div>
+                    <React.Fragment>
                     <Header name="Nazim"/> 
                     <Main 
                         adjective="personal"
                         blog={blogObjects}
                         />
                     <Footer year={new Date().getFullYear()}/> 
-                </div>
+                </React.Fragment>
                 );
             }
             ReactDOM.render(
