@@ -21,6 +21,11 @@
                 return (
                     <section> 
                         <p> Comprehensive blog detailed my {props.adjective} experiences. </p>
+                        <ul>
+                            {props.blog.map((item) => (
+                                <li key = {item.id}>{item.title}</li>
+                                ))}
+                        </ul>
                     </section>
                     );
             }
@@ -33,11 +38,27 @@
                 );
             }
 
-            function App () {
+            const blog = [
+                "Minoxidil",
+                "Finasteride", 
+                "Microneedling",
+                "Nizoral"
+            ];
+
+            const blogObjects = blog.map(
+                (item, i) => ({
+                id: i,
+                title: item
+                })
+            );
+            function App() {
                 return (
                     <div>
                     <Header name="Nazim"/> 
-                    <Main adjective="personal"/>
+                    <Main 
+                        adjective="personal"
+                        blog={blogObjects}
+                        />
                     <Footer year={new Date().getFullYear()}/> 
                 </div>
                 );
