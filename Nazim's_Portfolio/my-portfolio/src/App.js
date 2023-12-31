@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Bar() {
   return (
@@ -64,16 +64,38 @@ function Socials() {
 }
 
 function Menu() {
+  const listRef = useRef(null);
+  function scrollHandler(index) {
+    const listNode = listRef.current;
+    const sectionNode = listNode.querySelectorAll('li > Element')[index];
+    sectionNode.scrollIntoView({behavior: 'smooth', block:'nearest', inline: 'center'});
+  }
+  function queryHandler(listRef) {
+    <ul ref={listRef}>
+      <li><AboutPage/></li>
+      <li><PurposePage/></li>
+      <li><TipsPage/></li>
+      <li><SkillsPage/></li>
+      <li><ContactsPage/></li>
+    </ul>
+  }
   return (
     <div class="menu">
-      <Home /> /
-      <About /> /
-      <Purpose /> /
-      <Tips /> /
-      <Skills /> /
-      <Contact /> 
+      <nav>
+        <About onClick= {() => scrollHandler(0)} id="about_page"/> /
+        <Purpose onClick= {() => scrollHandler(1)} id="purpose_page"/> /
+        <Tips onClick = {() => scrollHandler(2)} id="tips_page"/> /
+        <Skills onClick = {() => scrollHandler(3)} id="skills_page"/> /
+        <Contact onClick = {() => scrollHandler(4)}id="contacts_page"/> 
+      </nav>
+      <script type="text/javascript">{queryHandler(listRef)}</script>
     </div>
   )
+}
+
+function clickHandler(props) {
+  const element = document.getElementById(props.id);
+  element.scrollIntoView({ behavior: "smooth"});
 }
 
 const currDate = () => {
@@ -85,48 +107,73 @@ const currDate = () => {
 return month + " " + day + ", " + year;
 }
 
-function Header() {
+function Header(props) {
   return (
     <div class="header">
       <img src="https://www.thoughtco.com/thmb/aS6zMjpwJyEsyMUBRLAq7cNkENE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/warning--data-transfer-in-progress-507065943-59c6d2a70d327a001141794d-5bb792f246e0fb0051a88f9c.jpg"/>
       <div class="caption">{currDate()}</div>
+      <div class="intro">My Everchanging Portfolio</div>
+      <div class="career_objective">
+        <button> Read More </button>
+      </div>
     </div>
   )
 }
 
-function Home() {
+function Middle1() {
   return (
-  <div class="home">Home</div>
+    <div class="middle1">
+      <div class="skills_caption">
+        <h2>Hard Skills; Programming Languages</h2>
+        <h1>Cultivating Skills from University of Washington and Self-Learning</h1>
+        <h2> {currDate()} | By Nazim Zerrouki </h2>
+        <img src="https://th.bing.com/th/id/OIP.yTTXFy8v6rxWZa5_UrH2zgHaEu?rs=1&pid=ImgDetMain"/>
+      </div>
+      <div class="about_caption">
+        <h2>Learn More | Nazim Zerrouki</h2>
+        <img src="https://th.bing.com/th/id/OIP.c4PlYExpbBZ_LezJEczzFAHaDt?rs=1&pid=ImgDetMain"/>
+      </div>
+      <div class="purpose_caption">
+        <img src="https://www.goalcast.com/wp-content/uploads/2017/05/purpose.jpg"/>
+      </div>
+      <div class="tips_caption"></div>
+    </div>
   )
 }
 
-function About() {
+function Home(props) {
   return (
-    <div class="about">About</div>
+  <div class="home"> <a>Home</a></div>
   )
 }
 
-function Purpose() {
+function About(props) {
   return (
-    <div class="purpose">Purpose</div>
+    <div class="about"><a>About</a></div>
   )
 }
 
-function Tips() {
+function Purpose(props) {
   return (
-    <div class="tips">Tips</div>
+    <div class="purpose"><a>Purpose</a></div>
   )
 }
 
-function Skills() {
+function Tips(props) {
   return (
-    <div class="skills">Skills</div>
+    <div class="tips"><a>Tips</a></div>
   )
 }
 
-function Contact() {
+function Skills(props) {
   return (
-    <div class="contact">Contact</div>
+    <div class="skills"><a>Skills</a></div>
+  )
+}
+
+function Contact(props) {
+  return (
+    <div class="contact"><a>Contact</a></div>
   )
 }
 
@@ -142,6 +189,36 @@ function RightBorder() {
   )
 }
 
+const PurposePage = () => {
+  return (
+    <div id="purpose_page">null</div>
+  )
+}
+
+const AboutPage = () => {
+  return (
+    <div id= "about_page">null</div>
+  )
+}
+
+const SkillsPage = () => {
+  return (
+    <div id="skills_page"></div>
+  )
+}
+
+const TipsPage = () => {
+  return (
+    <div id="tips_page"></div>
+  )
+}
+
+const ContactsPage = () => {
+  return (
+    <div id="contacts_page"></div>
+  )
+}
+
 function Main() {
   return (
     <div class="main"> 
@@ -149,8 +226,13 @@ function Main() {
       <hr class="top"/>
       <Title name="Nazim"/>
       <Menu />
-      <Header />
-       <div class="body"></div>
+      <Header id="purpose_page"/>
+      <Middle1 />
+      <PurposePage/>
+      <AboutPage/>
+      <SkillsPage/>
+      <TipsPage/>
+      <ContactsPage/>
     </div>
   ) 
 }

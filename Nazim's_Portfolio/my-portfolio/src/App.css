@@ -68,7 +68,7 @@
   display: inline-block;
   position: absolute;
   left: 0;
-  width: 5%;
+  width: 15%;
   height: 100%;
   background-color: rgba(190, 188, 188, 0.5);
 }
@@ -77,14 +77,14 @@
   display: inline-block;
   position: absolute;
   right: 0;
-  width: 5%;
+  width: 15%;
   height: 100%;
   background-color: rgba(190, 188, 188, 0.5);
 }
 
 .main {
   display:inline-block;
-  min-width: 90%;
+  width: 70%;
   height: 100%;
 }
 
@@ -101,23 +101,55 @@
 
 .header img {
   display: block;
-  height: 400px;
+  height: 20vw;
   width: 100%;
 }
 
 .caption {
   position: absolute;
   top: -50px;
-  left: 20%;
+  left: 15%;
   font-family: 'Script MT';
   color: black;
   opacity: 0.6;
-  line-height: 400px;
+  line-height: 20vw;
   font-size: larger;
   vertical-align: middle;
 }
 
-.menu {
+.intro {
+  position: absolute;
+  top: -20px;
+  left: 15%;
+  font-family: 'Script MT';
+  color: black;
+  line-height: 20vw;
+  font-size: xx-large;
+  vertical-align: middle;
+}
+
+.career_objective {
+  position: absolute;
+  top: 30px;
+  left: 15%;
+  font-family: 'Script MT';
+  line-height: 20vw;
+  font-size: xx-large;
+  vertical-align: middle;
+}
+
+.career_objective button {
+  align-content: center;
+  background-color: black;
+  box-sizing: border-box;
+  width: 100px;
+ 	height: 30px;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.menu nav{
   background-color: rgba(233, 228, 228, 0.5);
   display: flex;
   margin-right: 5%;
@@ -127,6 +159,14 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 20px;
   color: black;
+}
+
+.menu a:hover {
+  opacity: 0.3;
+}
+
+.menu a {
+  cursor: pointer;
 }
 
 .menu body {
@@ -139,6 +179,86 @@
   line-height: 50px;
   width: 20%;
   white-space: nowrap;
+}
+
+.middle1 {
+  display: block;
+  min-width: 100%;
+  height: 400px;
+  background-color: white;
+}
+
+.middle1 .about_caption {
+  display: inline-block;
+  width: 25%;
+}
+
+.middle1 .about_caption img {
+  height: 20vw;
+  width: 90%;
+}
+
+.middle1 .about_caption img:hover {
+  opacity: 0.5;
+}
+
+.middle1 .about_caption h2 {
+  font-size: 14px;
+  font-family:Arial, Helvetica, sans-serif;
+  opacity: 0.5;
+  text-align: left;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.middle1 .skills_caption {
+  display: inline-block;
+  margin-top: 30px;
+  width: 70%;
+}
+
+.middle1 .skills_caption img {
+  margin-right: 100px;
+  width: 95%;
+  height: 15vw;
+}
+
+.middle1 .skills_caption img:hover {
+  opacity: 0.5;
+}
+
+.middle1 .skills_caption h2 {
+  font-size: 14px;
+  font-family:Arial, Helvetica, sans-serif;
+  opacity: 0.5;
+  text-align: center;
+  display: block;
+  width: 90%;
+}
+
+.middle1 .skills_caption h1 {
+  font-size: 16px;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+  display: block;
+  width: 90%;
+}
+
+.middle1 .purpose_caption {
+  display: inline-block;
+  margin-top: 30px;
+  width: 70%;
+}
+
+.middle1 .purpose_caption img {
+  margin-right: 100px;
+  width: 95%;
+  height: 15vw;
+}
+
+.middle1 div {
+  display: inline-block;
 }
 
 
