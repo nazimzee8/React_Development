@@ -133,10 +133,14 @@ function Middle1() {
         <h2>Learn More | Nazim Zerrouki</h2>
         <img src="https://th.bing.com/th/id/OIP.c4PlYExpbBZ_LezJEczzFAHaDt?rs=1&pid=ImgDetMain"/>
       </div>
+      <div class="tips_caption">
+        <h2> Learn About What It Takes | Nazim Zerrouki </h2>
+        <img src="https://thumbs.dreamstime.com/b/question-mark-6906191.jpg"/>
+      </div>
       <div class="purpose_caption">
+        <h2> The Objective | Nazim Zerrouki </h2>
         <img src="https://www.goalcast.com/wp-content/uploads/2017/05/purpose.jpg"/>
       </div>
-      <div class="tips_caption"></div>
     </div>
   )
 }
@@ -191,31 +195,58 @@ function RightBorder() {
 
 const PurposePage = () => {
   return (
-    <div id="purpose_page">null</div>
+    <div class="purpose_page" id="purpose_page">
+      <h2>Purpose</h2>
+      <h3> I enjoyed my time developing multiple skills </h3>
+    </div>
   )
 }
 
 const AboutPage = () => {
   return (
-    <div id= "about_page">null</div>
+    <div class="about_page" id="about_page"> 
+      <h2> About Me </h2>
+      <h3> I am a recent graduate who successfully completed the graduate program for Computer Science & Systems
+      at University of Washington, Tacoma. I am an aspiring software developer ready to enter the industry 
+      with a passion for developing new skills, working with big companies, and with the zeal to change the world.
+      I am a very easy-going person who is very easy to communicate and collaborate with. On my spare time, I enjoy 
+      learning new programming languages and frameworks to work on personal projects such as this, working out for 
+      physical health and mental clarity, playing Chess, and playing video games from time to time. 
+      <br/>
+      <br/>
+      For more information and inquiries, please contact me using my "contacts".
+      </h3>
+    </div>
   )
 }
 
 const SkillsPage = () => {
   return (
-    <div id="skills_page"></div>
+    <div class="skills_page" id="skills_page"></div>
   )
 }
 
 const TipsPage = () => {
   return (
-    <div id="tips_page"></div>
+    <div class="tips_page" id="tips_page"></div>
   )
 }
 
 const ContactsPage = () => {
   return (
-    <div id="contacts_page"></div>
+    <div class="contacts_page" id="contacts_page"></div>
+  )
+}
+
+function Content() {
+  return (
+    <div class="content">
+      <AboutPage/>
+      <PurposePage/>
+      <SkillsPage/>
+      <TipsPage/>
+      <ContactsPage/>
+    </div>
   )
 }
 
@@ -228,11 +259,7 @@ function Main() {
       <Menu />
       <Header id="purpose_page"/>
       <Middle1 />
-      <PurposePage/>
-      <AboutPage/>
-      <SkillsPage/>
-      <TipsPage/>
-      <ContactsPage/>
+      <Content />
     </div>
   ) 
 }

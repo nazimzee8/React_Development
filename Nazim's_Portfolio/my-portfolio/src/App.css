@@ -69,7 +69,7 @@
   position: absolute;
   left: 0;
   width: 15%;
-  height: 100%;
+  height: 200%;
   background-color: rgba(190, 188, 188, 0.5);
 }
 
@@ -78,7 +78,7 @@
   position: absolute;
   right: 0;
   width: 15%;
-  height: 100%;
+  height: 200%;
   background-color: rgba(190, 188, 188, 0.5);
 }
 
@@ -198,7 +198,7 @@
   width: 90%;
 }
 
-.middle1 .about_caption img:hover {
+.middle1 img:hover {
   opacity: 0.5;
 }
 
@@ -224,10 +224,6 @@
   height: 15vw;
 }
 
-.middle1 .skills_caption img:hover {
-  opacity: 0.5;
-}
-
 .middle1 .skills_caption h2 {
   font-size: 14px;
   font-family:Arial, Helvetica, sans-serif;
@@ -248,7 +244,7 @@
 .middle1 .purpose_caption {
   display: inline-block;
   margin-top: 30px;
-  width: 70%;
+  width: 40%;
 }
 
 .middle1 .purpose_caption img {
@@ -257,9 +253,72 @@
   height: 15vw;
 }
 
+.middle1 .purpose_caption h2 {
+  font-size: 14px;
+  font-family:Arial, Helvetica, sans-serif;
+  opacity: 0.5;
+  text-align: center;
+  display: block;
+  width: 90%;
+}
+
+.middle1 .tips_caption {
+  display: inline-block;
+  margin-top: 30px;
+  width: 40%;
+}
+
+.middle1 .tips_caption img {
+  width: 95%;
+  height: 15vw;
+}
+
+.middle1 .tips_caption h2 {
+  font-size: 14px;
+  font-family:Arial, Helvetica, sans-serif;
+  opacity: 0.5;
+  text-align: center;
+  display: block;
+  width: 90%;
+}
+
 .middle1 div {
   display: inline-block;
 }
+
+.content {
+  display: block;
+  margin-top: 20vw;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+.about_page {
+  display: block;
+  position: relative;
+  width: 70%;
+  left: 15%;
+  text-align: center;
+  line-height: 24px;
+}
+
+.purpose_page {
+  display: block;
+  position: relative;
+  width: 70%;
+  left: 15%;
+  text-align: center;
+  line-height: 24px;
+}
+
+content h2 {
+  font-size: 32px;
+}
+
+.content h3 {
+  font-size: 14px;
+}
+
 
 
 @media (prefers-reduced-motion: no-preference) {
