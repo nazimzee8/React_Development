@@ -24,16 +24,45 @@
 }
 
 .socials {
-  display: inline-flex;
-  justify-content: space-between;
-  width: 120px;
-  margin-left: 2%;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  width: 200px;
+  margin-top: 1%;
+}
+
+.referral {
+  display: flex;
+  margin-top: 0.5%;
+  font-family: 'Script MT';
+  font-size: xx-large;
+  vertical-align: middle;
+  align-content: center;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 2px solid black;
+  width: 150px;
+ 	height: 49px;
+  color: black;
+  cursor: pointer;
+}
+
+.referral :hover {
+  background-color: black;
+  color: white;
+}
+
+
+.logo img {
+  height: 100%;
+  width: 100px;
   margin-top: 1%;
 }
 
 .socials img {
-  height: 15px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
   cursor: pointer;
 }
 
@@ -54,6 +83,7 @@
 }
 
 .socials div {
+  justify-content: space-between;
   white-space: nowrap;
 }
 
@@ -68,8 +98,8 @@
   display: inline-block;
   position: absolute;
   left: 0;
-  width: 15%;
-  height: 200%;
+  width: 10%;
+  height: 1000%;
   background-color: rgba(190, 188, 188, 0.5);
 }
 
@@ -77,14 +107,14 @@
   display: inline-block;
   position: absolute;
   right: 0;
-  width: 15%;
-  height: 200%;
+  width: 10%;
+  height: 1000%;
   background-color: rgba(190, 188, 188, 0.5);
 }
 
 .main {
   display:inline-block;
-  width: 70%;
+  width: 80%;
   height: 100%;
 }
 
@@ -161,11 +191,11 @@
   color: black;
 }
 
-.menu a:hover {
+.menu nav a:hover {
   opacity: 0.3;
 }
 
-.menu a {
+.menu nav a {
   cursor: pointer;
 }
 
@@ -282,41 +312,138 @@
   width: 90%;
 }
 
-.middle1 div {
-  display: inline-block;
-}
-
 .content {
   display: block;
-  margin-top: 20vw;
-  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  font-family: Roboto, sans-serif;
   width: 100%;
+  margin-top: 24vw;
 }
 
 .about_page {
-  display: block;
-  position: relative;
-  width: 70%;
-  left: 15%;
-  text-align: center;
+  display: grid;
+  align-items: center;
+  grid-gap: 114.6px;
+  gap: 114.6px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 133.3px 85.3px;
   line-height: 24px;
 }
+
+.about_page h2 {
+  display: block;
+  position: relative;
+  width: 100%;
+  left: 50%;
+}
+
+.about_page .about_section {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.about_page .about_section button {
+  align-content: center;
+  background-color: black;
+  box-sizing: border-box;
+  width: 100px;
+ 	height: 60px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.about_img>img {
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.skills_page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  line-height: 24px;
+}
+
+.skills_section {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hard_skills {
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.soft_skills {
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.hblock {
+  background-color: rgb(236, 72, 6);
+  width: 15%;
+  height: 10x;
+}
+
+.sblock {
+  background-color: rgb(51, 137, 235);
+  width: 15%;
+  height: 10px;
+}
+
+.skills_section .soft_skills {
+  
+}
+
+.block {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-direction: column;
+  border-radius: 10px;
+  align-self: stretch;
+  min-height: 250px;
+  background-color: rgba(190, 188, 188, 0.5);
+  
+}
+
+.block img {
+  height: 20px;
+  width: 20px;
+}
+
 
 .purpose_page {
   display: block;
   position: relative;
   width: 70%;
   left: 15%;
-  text-align: center;
+  margin-top: 100px;
   line-height: 24px;
 }
 
 content h2 {
-  font-size: 32px;
+  font-size: 42px;
 }
 
 .content h3 {
-  font-size: 14px;
+  font-size: 16px;
+  text-align: left;
+  text-indent: 50px;
+}
+
+.content ul {
+  text-align: left;
 }
 
 

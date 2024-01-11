@@ -5,14 +5,16 @@ import { useState, useEffect, useRef } from "react";
 
 function Bar() {
   return (
-    <div class="bar"><Socials />
+    <div class="bar">
+      <Socials />
+      <Referral />
     </div>
   )
 }
 
 function Title(props) {
   return (
-    <div class="title">{props.name}'s Blog</div>
+    <div class="title">{props.name}'s Portfolio</div>
   )
 }
 
@@ -46,8 +48,16 @@ const Twitter = (props) => {
 const GitHub = (props) => {
   return (
     <div class="github">
-      <img src="https://banner2.cleanpng.com/20180824/jtl/kisspng-computer-icons-logo-portable-network-graphics-clip-icons-for-free-iconza-circle-social-5b7fe46b0bac53.1999041115351082030478.jpg"
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
       onClick={() => window.location.href = props.link}/>
+    </div>
+  )
+}
+
+const Referral = () => {
+  return (
+    <div class="referral"> 
+      <a> Contact Me </a>
     </div>
   )
 }
@@ -73,20 +83,20 @@ function Menu() {
   function queryHandler(listRef) {
     <ul ref={listRef}>
       <li><AboutPage/></li>
+      <li><SkillsPage/></li>
       <li><PurposePage/></li>
       <li><TipsPage/></li>
-      <li><SkillsPage/></li>
       <li><ContactsPage/></li>
     </ul>
   }
   return (
     <div class="menu">
       <nav>
-        <About onClick= {() => scrollHandler(0)} id="about_page"/> /
-        <Purpose onClick= {() => scrollHandler(1)} id="purpose_page"/> /
-        <Tips onClick = {() => scrollHandler(2)} id="tips_page"/> /
-        <Skills onClick = {() => scrollHandler(3)} id="skills_page"/> /
-        <Contact onClick = {() => scrollHandler(4)}id="contacts_page"/> 
+        <a onClick= {() => scrollHandler(0)} id="about_page"/> About /
+        <a onClick= {() => scrollHandler(1)} id="skills_page"/> Skills /
+        <a onClick = {() => scrollHandler(2)} id="purpose_page"/> Purpose /
+        <a onClick = {() => scrollHandler(3)} id="tips_page"/> Tips /
+        <a onClick = {() => scrollHandler(4)}id="contacts_page"/> Contacts
       </nav>
       <script type="text/javascript">{queryHandler(listRef)}</script>
     </div>
@@ -112,7 +122,7 @@ function Header(props) {
     <div class="header">
       <img src="https://www.thoughtco.com/thmb/aS6zMjpwJyEsyMUBRLAq7cNkENE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/warning--data-transfer-in-progress-507065943-59c6d2a70d327a001141794d-5bb792f246e0fb0051a88f9c.jpg"/>
       <div class="caption">{currDate()}</div>
-      <div class="intro">My Everchanging Portfolio</div>
+      <div class="intro">Nazim's Graduate Portfolio</div>
       <div class="career_objective">
         <button> Read More </button>
       </div>
@@ -145,7 +155,7 @@ function Middle1() {
   )
 }
 
-function Home(props) {
+/*function Home(props) {
   return (
   <div class="home"> <a>Home</a></div>
   )
@@ -179,7 +189,7 @@ function Contact(props) {
   return (
     <div class="contact"><a>Contact</a></div>
   )
-}
+}*/
 
 function LeftBorder() {
   return (
@@ -197,32 +207,107 @@ const PurposePage = () => {
   return (
     <div class="purpose_page" id="purpose_page">
       <h2>Purpose</h2>
-      <h3> I enjoyed my time developing multiple skills </h3>
+      <br/>
+      <h3> <p>I enjoyed my time developing multiple programming skills at Univerisity of Washington, Tacoma.
+        However, there were also numerous difficulties that I had to overcome; some of which left me questioning
+        if I was ever going to graduate and succeed. This feeling of doubt and unieasiness was something that he begun 
+        during my first year at University of Washington which had persisted during the time I was enrolled in their
+        Computer Science program. My first programming course was an introduction to programming where I first learned 
+        how to program in python. There were some students that also struggled but many others who grasped these concepts
+        relatively quickly whereas for me, it felt like a foreign language; incomprehensible. </p>
+
+        <p>I was typically an A student who made it to the Deans' list within the majority of my academic career and yet 
+        I scored one of the lowest grades I had ever received in a class, a 3.0. Towards the end of the class, I was actually
+        relieved that it was finally over. None of the material that was discussed in the class made any sense to me.
+        Creating my own for loops to solve a problem without hardcoding it was perplexing to me, I didn't even remotely understand
+        how to parse through a file, and I didn't understand how to construdct my own functions to effectively solve a problem
+        in respect to different parameters.</p>
+
+        <p>While I didn't understand it at the time, programming is very similar to math; not in the sense of rationalizing
+        complex problems using a set of rules. It's all about comparmentalizing a problem and interpreting each piece in a way
+        that is understandable to you via pseudocode. This is often done by thinking simplistically about what needs to be done before
+        translating it into code.</p>
+
+        <p>This wasn't the only time I struggled. My last year at University of Washington was especially a difficult one where
+        I worked in a group on a big project that was especially difficult to work with. There are things that I had learned
+        throughout my academic career to help me succeed throughout my undergraduate and graduate ventures at University of Washington.</p>
+        </h3>
     </div>
   )
 }
 
-const AboutPage = () => {
+const AboutPage = (props) => {
   return (
     <div class="about_page" id="about_page"> 
       <h2> About Me </h2>
-      <h3> I am a recent graduate who successfully completed the graduate program for Computer Science & Systems
-      at University of Washington, Tacoma. I am an aspiring software developer ready to enter the industry 
-      with a passion for developing new skills, working with big companies, and with the zeal to change the world.
-      I am a very easy-going person who is very easy to communicate and collaborate with. On my spare time, I enjoy 
-      learning new programming languages and frameworks to work on personal projects such as this, working out for 
-      physical health and mental clarity, playing Chess, and playing video games from time to time. 
       <br/>
-      <br/>
-      For more information and inquiries, please contact me using my "contacts".
-      </h3>
+      <div class="about_img">
+        <img src="https://i.imgur.com/FpV5ylC.jpg?1" alt="Profile pic"/>
+      </div>
+      <div class="about_section">
+        <h3> I am a recent graduate who successfully completed the graduate program for Computer Science & Systems
+        at University of Washington, Tacoma. I am an aspiring software developer ready to enter the industry 
+        with a passion for developing new skills, working with big companies, and with the zeal to change the world.
+        I am a very easy-going person who is very easy to communicate and collaborate with. On my spare time, I enjoy 
+        learning new programming languages and frameworks to work on personal projects such as this, working out for 
+        physical health and mental clarity, playing Chess, and playing video games from time to time. 
+        <br/>
+        <br/>
+
+        Education:
+
+        <ul>
+          <li>University of Washington, Tacoma. Bachelors' of Science in Computer Science and Systems, Sept 2016-June 2020.</li>
+          <li>University of Washington, Tacoma. Masters' of Science in Computer Science and Systems, Sept 2020-Mar 2023.</li>
+        </ul>
+
+        <br/>
+        <br/>
+        For more information and inquiries, please get in touch with me. &nbsp;&nbsp;&nbsp;&nbsp;
+        <button onClick={() => (window.location.replace(props.link))}>Contact Me</button>
+        </h3>
+      </div>
     </div>
   )
 }
 
+/*const SkillsPage = () => {
+  return (
+    <div class="skills_page" id="skills_page">
+      <h2>Skills</h2>
+      <br/>
+      <h3>
+        <ul>
+          <li>Object Oriented Programming (Java, JavaScript, Python)</li>
+          <li>Algorithms (Dynammic Programming & Recursion) </li>
+          <li>Machine Learning (Model-Free, Model-Based, Deep Learning)</li>
+          <li>Data Science</li>
+          <li>Web Programming (HTML, CSS, Node.js, React)</li>
+          <li>Database Design (SQL, Oracle) </li>
+          <li>Full Stack Development (HTML, CSS, Node.js, PHP, React) </li>
+
+        </ul>
+      </h3>
+    </div>
+  )
+}*/
+
 const SkillsPage = () => {
   return (
-    <div class="skills_page" id="skills_page"></div>
+    <div class="skills_page" id="skills_page">
+      <h2>Skills</h2>
+      <br/>
+      <div class="skills_section">
+
+        <div class="hard_skills">
+          <div class="h_block">Hard Skills</div>
+        </div>
+
+        <div class="soft_skills">
+          <div class="s_block">Soft Skills</div>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -241,9 +326,9 @@ const ContactsPage = () => {
 function Content() {
   return (
     <div class="content">
-      <AboutPage/>
-      <PurposePage/>
+      <AboutPage link="https://linkedin.com/in/nazim-zerrouki-1966a51b7"/>
       <SkillsPage/>
+      <PurposePage/>
       <TipsPage/>
       <ContactsPage/>
     </div>
@@ -259,6 +344,7 @@ function Main() {
       <Menu />
       <Header id="purpose_page"/>
       <Middle1 />
+      <br />
       <Content />
     </div>
   ) 
