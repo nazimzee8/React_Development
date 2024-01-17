@@ -323,6 +323,7 @@
 .about_page {
   display: grid;
   align-items: center;
+  /*background-color: rgb(224, 223, 223);*/
   grid-gap: 114.6px;
   gap: 114.6px;
   grid-template-columns: repeat(2, 1fr);
@@ -335,6 +336,10 @@
   position: relative;
   width: 100%;
   left: 50%;
+}
+
+.about_page h3 {
+  font-size: 16px;
 }
 
 .about_page .about_section {
@@ -377,32 +382,57 @@ img {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.skills_section ul {
+  text-align: left;
+}
+
+.skills_section h3 {
+  display: block;
+  position: relative;
+  font-size: 24px;
+  text-align: left;
+  width: 100%;
+  left: 25%;
+}
+
 .hard_skills {
   display: grid;
   align-items: center;
-  grid-template-rows: repeat(8, 1fr);
+  margin-left: 5%;
+}
+
+.hard_skills>img {
+  height: 120px;
+  width: 120px;
+  margin-left: 30%;
+  margin-top: 5%;
+}
+
+.hskill_container {
+  margin-left: 7.5%;
+  width: 75%;
+  box-sizing: border-box;
+  border-left: 2px solid black;
 }
 
 .soft_skills {
   display: grid;
   align-items: center;
-  grid-template-rows: repeat(8, 1fr);
+  margin-left: 5%;
 }
 
-.hblock {
-  background-color: rgb(236, 72, 6);
-  width: 15%;
-  height: 10x;
+.soft_skills>img {
+  height: 120px;
+  width: 120px;
+  margin-left: 30%;
+  margin-top: 5%;
 }
 
-.sblock {
-  background-color: rgb(51, 137, 235);
-  width: 15%;
-  height: 10px;
-}
-
-.skills_section .soft_skills {
-  
+.sskill_container {
+  margin-left: 7.5%;
+  width: 75%;
+  box-sizing: border-box;
+  border-left: 2px solid rgb(0, 132, 255)
 }
 
 .block {
@@ -422,8 +452,7 @@ img {
   width: 20px;
 }
 
-
-.purpose_page {
+.purpose_section {
   display: block;
   position: relative;
   width: 70%;
@@ -432,20 +461,99 @@ img {
   line-height: 24px;
 }
 
-content h2 {
-  font-size: 42px;
+.purpose_page ul {
+  text-align: left;
 }
 
-.content h3 {
+content h2 {
+  font-size: 48px;
+}
+
+.purpose_page h3 {
   font-size: 16px;
   text-align: left;
   text-indent: 50px;
 }
 
-.content ul {
+.tips_page {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.tips_section {
+  display: block;
+  position: relative;
+  width: 70%;
+  left: 15%;
+  line-height: 24px;
+}
+
+.tips_section h3 {
+  font-size: 16px;
   text-align: left;
 }
 
+.tips_section .collab {
+  display: block;
+  margin-left: 12.5%;
+  height: 300px;
+  width: 75%;
+}
+
+.tips_section .break {
+  display: block;
+  height: 200px;
+  width: 50%;
+}
+
+
+.tips_section .diagram {
+  display: block;
+  height: 200px;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.contacts_page {
+  margin-top: 100px;
+}
+.contacts_page h2 {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.contacts_section {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  width: 60%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: solid 2px black;
+  background-color: (190, 188, 188, 0.5);
+}
+
+.contacts_section .email a {
+  display: inline-block;
+}
+
+.contacts_section .email img {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
+.contacts_section .linkedin a{
+  display: inline-block;
+}
+
+.contacts_section .linkedin img {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
