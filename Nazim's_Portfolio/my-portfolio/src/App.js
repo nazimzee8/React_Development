@@ -393,7 +393,7 @@ const TipsPage = () => {
             In Computer Security, I was required to complete a variety of esoteric labs found on Seed Labs and the most important thing was not whether or not I understood Cybersecurity. 
             It's the fact that I was willing to learn and was willing to continue searching through the Web until I found the information that I needed. 
             This also enabled me to create a web page and connect it to an advanced relational database with the help of a partner despite having no prior experience.
-            That can be located on my <a style = {{cursor: "pointer", textDecorationColor: "pink"}} onClick={() => window.location.href = "https://github.com/nazimzee8"}>github</a>.</h3>
+            That can be located on my <a style = {{cursor: "pointer", textDecorationColor: "pink"}} href="https://github.com/nazimzee8">github</a>.</h3>
           </li>
           <img class="diagram" src="https://nazimz99.github.io/UW-CS_Experience/img/General-Tree-Structure.png"/>
           <li>
@@ -419,11 +419,11 @@ const ContactsPage = () => {
       <div class="contacts_section">
         <div class="email">
           <img src="https://th.bing.com/th/id/OIP.Z2lotQUlRFaoqY7m3Ma89QHaHa?rs=1&pid=ImgDetMain"></img>
-          <a onClick={() => window.location.href = "mailto:nazerrouki@gmail.com"}><h3>nazerrouki@gmail.com</h3></a>
+          <a href = "mailto:nazerrouki@gmail.com"><h3>nazerrouki@gmail.com</h3></a>
         </div>
         <div class="linkedin">
           <img src="https://www.xenneotech.com/images/linked-in.png"></img>
-          <h3>LinkedIn</h3></div>
+          <a href = "https://www.linkedin.com/in/nazim-zerrouki-1966a51b7"><h3>LinkedIn</h3></a></div>
       </div>
     </div>
   )
@@ -454,6 +454,10 @@ function Main() {
       <Content />
     </div>
   ) 
+}
+
+function Footer() {
+  
 }
 
 function App() {

@@ -1,11 +1,14 @@
 .App {
   text-align: center;
+  min-width: 600px;
+  height: 100%;
 }
 
 .bar {
   display: inline-flex;
   height: 5px;
-  min-width: 100%;
+  width: 100%;
+  min-width: 480px;
   background-color: white;
 }
 
@@ -17,7 +20,8 @@
   font-size: 50px;
   text-align: center;
   vertical-align: middle;
-  min-width: 85%;
+  width: 85%;
+  min-width: 480px;
   font-family: 'Script MT', cursive;
   font-weight: bolder;
   line-height: 150px;
@@ -95,27 +99,27 @@
 }*/
 
 .leftBorder {
-  display: inline-block;
+  display: inline-flex;
   position: absolute;
   left: 0;
   width: 10%;
-  height: 1000%;
+  height: 100vh;
   background-color: rgba(190, 188, 188, 0.5);
 }
 
 .rightBorder {
-  display: inline-block;
+  display: inline-flex;
   position: absolute;
   right: 0;
   width: 10%;
-  height: 1000%;
+  height: 100vh;
   background-color: rgba(190, 188, 188, 0.5);
 }
 
 .main {
   display:inline-block;
   width: 80%;
-  height: 100%;
+  height: 100vh;
 }
 
 .main hr {
@@ -125,45 +129,43 @@
 .header {
   position: relative;
   text-align: center;
+  min-width: 480px;
   display: flex;
   position: relative;
 }
 
 .header img {
   display: block;
-  height: 20vw;
+  height: 350px;
   width: 100%;
 }
 
 .caption {
   position: absolute;
-  top: -50px;
   left: 15%;
+  top: 25%;
   font-family: 'Script MT';
   color: black;
   opacity: 0.6;
-  line-height: 20vw;
   font-size: larger;
   vertical-align: middle;
 }
 
 .intro {
   position: absolute;
-  top: -20px;
+  top: 30%;
   left: 15%;
   font-family: 'Script MT';
   color: black;
-  line-height: 20vw;
   font-size: xx-large;
   vertical-align: middle;
 }
 
 .career_objective {
   position: absolute;
-  top: 30px;
+  top: 40%;
   left: 15%;
   font-family: 'Script MT';
-  line-height: 20vw;
   font-size: xx-large;
   vertical-align: middle;
 }
@@ -185,6 +187,7 @@
   margin-right: 5%;
   height: 50px;
   width: 100%;
+  min-width: 480px;
   justify-content: space-between;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 20px;
@@ -208,13 +211,14 @@
   vertical-align: middle;
   line-height: 50px;
   width: 20%;
+  min-width: 96px;
   white-space: nowrap;
 }
 
 .middle1 {
   display: block;
-  min-width: 100%;
-  height: 400px;
+  width: 100%;
+  min-width: 480px;
   background-color: white;
 }
 
@@ -224,7 +228,7 @@
 }
 
 .middle1 .about_caption img {
-  height: 20vw;
+  height: 400px;
   width: 90%;
 }
 
@@ -251,7 +255,7 @@
 .middle1 .skills_caption img {
   margin-right: 100px;
   width: 95%;
-  height: 15vw;
+  height: 350px;
 }
 
 .middle1 .skills_caption h2 {
@@ -280,7 +284,7 @@
 .middle1 .purpose_caption img {
   margin-right: 100px;
   width: 95%;
-  height: 15vw;
+  height: 300px;
 }
 
 .middle1 .purpose_caption h2 {
@@ -300,7 +304,7 @@
 
 .middle1 .tips_caption img {
   width: 95%;
-  height: 15vw;
+  height: 350px;
 }
 
 .middle1 .tips_caption h2 {
@@ -317,7 +321,8 @@
   position: relative;
   font-family: Roboto, sans-serif;
   width: 100%;
-  margin-top: 24vw;
+  min-width: 480px;
+  margin-top: 50px;
 }
 
 .about_page {
@@ -329,6 +334,7 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 133.3px 85.3px;
   line-height: 24px;
+  min-width: 480px;
 }
 
 .about_page h2 {
@@ -343,9 +349,7 @@
 }
 
 .about_page .about_section {
-  align-items: flex-start;
   display: flex;
-  flex-direction: column;
 }
 
 .about_page .about_section button {
@@ -361,7 +365,9 @@
 
 .about_img>img {
   height: 100%;
+  min-height: 300px;
   width: 100%;
+  min-width: 300px;
 }
 
 img {
@@ -373,6 +379,7 @@ img {
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-width: 480px;
   line-height: 24px;
 }
 
@@ -435,23 +442,6 @@ img {
   border-left: 2px solid rgb(0, 132, 255)
 }
 
-.block {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  flex-direction: column;
-  border-radius: 10px;
-  align-self: stretch;
-  min-height: 250px;
-  background-color: rgba(190, 188, 188, 0.5);
-  
-}
-
-.block img {
-  height: 20px;
-  width: 20px;
-}
-
 .purpose_section {
   display: block;
   position: relative;
@@ -459,6 +449,10 @@ img {
   left: 15%;
   margin-top: 100px;
   line-height: 24px;
+}
+
+.purpose_page {
+  min-width: 480px;
 }
 
 .purpose_page ul {
@@ -477,6 +471,7 @@ content h2 {
 
 .tips_page {
   margin-top: 100px;
+  min-width: 480px;
   text-align: center;
 }
 
@@ -515,24 +510,35 @@ content h2 {
 }
 
 .contacts_page {
-  margin-top: 100px;
+  margin-top: 300px;
+  min-width: 480px;
 }
+
 .contacts_page h2 {
   display: block;
   position: relative;
+  font-size: 40px;
   width: 100%;
 }
 
 .contacts_section {
-  display: block;
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  align-items: center;
-  width: 60%;
+  justify-content: center;
+  margin-top: 0.5rem;
+  height: 100px;
   box-sizing: border-box;
-  border-radius: 10px;
-  border: solid 2px black;
+  border-radius: 2rem;
+  border: solid 1px black;
   background-color: (190, 188, 188, 0.5);
+  padding: 0.5rem;
+}
+
+.contacts_section .email {
+  float: left;
+  margin: 1rem;
+  vertical-align: middle;
 }
 
 .contacts_section .email a {
@@ -542,7 +548,13 @@ content h2 {
 .contacts_section .email img {
   display: inline-block;
   height: 30px;
-  width: 30px;
+  vertical-align: middle;
+}
+
+.contacts_section .linkedin {
+  float: right;
+  margin: 1rem;
+  vertical-align: middle;
 }
 
 .contacts_section .linkedin a{
@@ -552,7 +564,7 @@ content h2 {
 .contacts_section .linkedin img {
   display: inline-block;
   height: 30px;
-  width: 30px;
+  vertical-align: middle;
 }
 
 
@@ -575,6 +587,16 @@ content h2 {
 
 .App-link {
   color: #61dafb;
+}
+
+html, body {
+  height: 100vh;
+  min-width: 480px;
+  overflow: hidden;
+}
+
+body {
+  overflow: scroll;
 }
 
 @keyframes App-logo-spin {
