@@ -4,7 +4,7 @@
   height: 100%;
 }
 
-.bar {
+.bar .section {
   display: inline-flex;
   height: 5px;
   width: 100%;
@@ -12,7 +12,7 @@
   background-color: white;
 }
 
-.top {
+.divider {
   opacity: 0.3;
 }
 
@@ -137,7 +137,7 @@
 .header img {
   display: block;
   height: 350px;
-  width: 100%;
+  width: 100vw;
 }
 
 .caption {
@@ -322,10 +322,9 @@
   font-family: Roboto, sans-serif;
   width: 100%;
   min-width: 480px;
-  margin-top: 50px;
 }
 
-.about_page {
+.about_page .section {
   display: grid;
   align-items: center;
   /*background-color: rgb(224, 223, 223);*/
@@ -337,22 +336,22 @@
   min-width: 480px;
 }
 
-.about_page h2 {
+.about_page .section h2 {
   display: block;
   position: relative;
   width: 100%;
   left: 50%;
 }
 
-.about_page h3 {
+.about_page .section h3 {
   font-size: 16px;
 }
 
-.about_page .about_section {
+.about_section {
   display: flex;
 }
 
-.about_page .about_section button {
+.about_section button {
   align-content: center;
   background-color: black;
   box-sizing: border-box;
@@ -383,17 +382,17 @@ img {
   line-height: 24px;
 }
 
-.skills_section {
+#skills_section {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.skills_section ul {
+#skills_section ul {
   text-align: left;
 }
 
-.skills_section h3 {
+#skills_section h3 {
   display: block;
   position: relative;
   font-size: 24px;
@@ -442,7 +441,7 @@ img {
   border-left: 2px solid rgb(0, 132, 255)
 }
 
-.purpose_section {
+#purpose_section {
   display: block;
   position: relative;
   width: 70%;
@@ -475,7 +474,7 @@ content h2 {
   text-align: center;
 }
 
-.tips_section {
+#tips_section {
   display: block;
   position: relative;
   width: 70%;
@@ -483,26 +482,26 @@ content h2 {
   line-height: 24px;
 }
 
-.tips_section h3 {
+#tips_section h3 {
   font-size: 16px;
   text-align: left;
 }
 
-.tips_section .collab {
+#tips_section .collab {
   display: block;
   margin-left: 12.5%;
   height: 300px;
   width: 75%;
 }
 
-.tips_section .break {
+#tips_section .break {
   display: block;
   height: 200px;
   width: 50%;
 }
 
 
-.tips_section .diagram {
+#tips_section .diagram {
   display: block;
   height: 200px;
   width: 60%;
@@ -521,7 +520,7 @@ content h2 {
   width: 100%;
 }
 
-.contacts_section {
+#contacts_section {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -535,38 +534,106 @@ content h2 {
   padding: 0.5rem;
 }
 
-.contacts_section .email {
+#contacts_section .email {
   float: left;
   margin: 1rem;
   vertical-align: middle;
 }
 
-.contacts_section .email a {
+#contacts_section .email a {
   display: inline-block;
 }
 
-.contacts_section .email img {
+#contacts_section .email img {
   display: inline-block;
   height: 30px;
   vertical-align: middle;
 }
 
-.contacts_section .linkedin {
+#contacts_section .linkedin {
   float: right;
   margin: 1rem;
   vertical-align: middle;
 }
 
-.contacts_section .linkedin a{
+#contacts_section .linkedin a{
   display: inline-block;
 }
 
-.contacts_section .linkedin img {
+#contacts_section .linkedin img {
   display: inline-block;
   height: 30px;
   vertical-align: middle;
 }
 
+.footer {
+  width: 80vw;
+  background-color: rgba(190, 188, 188, 0.5);
+  margin-top: 100px;
+  align-items: center;
+  align-self: stretch;
+}
+
+.footer_section {
+  margin-top: -45px;
+}
+
+.footer_image {
+  display: inline-flex;
+  position: relative;
+  top: 100px;
+  left: -40%;
+}
+
+.footer_image img {
+  display: block;
+  position: relative;
+  top: -45px;
+  height: 150px;
+  width: 200px;
+}
+
+.footer_links {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  margin-left: 30%;
+  width: 30%;
+}
+
+.footer_links nav {
+  display: inline-flex;
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.footer_links nav>a {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer_links nav>a:hover {
+  cursor: pointer;
+  opacity: 0.3;
+
+}
+
+.footer_logos {
+  display: inline-flex;
+  position: relative;
+  left: 40%;
+  bottom: 25px;
+}
+
+.copyright {
+  display: block;
+  position: relative;
+  right: 6%;
+  font-size: 0.5rem;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -596,7 +663,7 @@ html, body {
 }
 
 body {
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 @keyframes App-logo-spin {

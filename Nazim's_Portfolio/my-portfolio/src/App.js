@@ -1,20 +1,21 @@
 import './App.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { useState, useEffect, useRef } from "react";
+import {useRef } from "react";
 
 function Bar() {
   return (
-    <div class="bar">
-      <Socials />
-      <Referral />
+    <div class="bar" id="page">
+      <div class="section">
+        <Socials />
+        <Referral />
+      </div>
     </div>
   )
 }
 
 function Title(props) {
   return (
-    <div class="title">{props.name}'s Portfolio</div>
+    <div class="title">{props.name}'s Portfolio </div>
   )
 }
 
@@ -74,38 +75,28 @@ function Socials() {
 }
 
 function Menu() {
-  const listRef = useRef(null);
-  function scrollHandler(index) {
-    const listNode = listRef.current;
-    const sectionNode = listNode.querySelectorAll('li > Element')[index];
-    sectionNode.scrollIntoView({behavior: 'smooth', block:'nearest', inline: 'center'});
-  }
-  function queryHandler(listRef) {
-    <ul ref={listRef}>
-      <li><AboutPage/></li>
-      <li><SkillsPage/></li>
-      <li><PurposePage/></li>
-      <li><TipsPage/></li>
-      <li><ContactsPage/></li>
-    </ul>
+  const pageRef = useRef(null);
+  function scrollToIndex(index) {
+    const pageNodes = document.querySelectorAll("#page > div.section");
+    pageRef.current = pageNodes[index];
+    pageRef.current.scrollIntoView({behavior: 'instant', block: 'start'});
   }
   return (
     <div class="menu">
       <nav>
-        <a onClick= {() => scrollHandler(0)} id="about_page"/> About /
-        <a onClick= {() => scrollHandler(1)} id="skills_page"/> Skills /
-        <a onClick = {() => scrollHandler(2)} id="purpose_page"/> Purpose /
-        <a onClick = {() => scrollHandler(3)} id="tips_page"/> Tips /
-        <a onClick = {() => scrollHandler(4)}id="contacts_page"/> Contacts
+        <a onClick= {() => scrollToIndex(1)} id="about_page"> &ensp; &ensp; About</a> /
+        <a onClick= {() => scrollToIndex(2)} id="skills_page"> Skills</a> /
+        <a onClick = {() => scrollToIndex(3)} id="purpose_page"> Purpose</a> /
+        <a onClick = {() => scrollToIndex(4)} id="tips_page"> Tips</a> /
+        <a onClick = {() => scrollToIndex(5)}id="contacts_page"> Contacts &ensp; &ensp;</a>
       </nav>
-      <script type="text/javascript">{queryHandler(listRef)}</script>
     </div>
   )
 }
 
-function clickHandler(props) {
-  const element = document.getElementById(props.id);
-  element.scrollIntoView({ behavior: "smooth"});
+function clickHandler(name) {
+  const element = document.getElementsByClassName(name)[0];
+  element.scrollIntoView({behavior: 'instant', block: 'center'});
 }
 
 const currDate = () => {
@@ -124,32 +115,42 @@ function Header(props) {
       <div class="caption">{currDate()}</div>
       <div class="intro">Nazim's Graduate Portfolio</div>
       <div class="career_objective">
-        <button> Read More </button>
+        <button onClick={() => clickHandler(props.name)}> Read More </button>
       </div>
     </div>
   )
 }
 
 function Middle1() {
+  const pageRef = useRef(null);
+  function scrollToIndex(index) {
+    const pageNodes = document.querySelectorAll("#page > div.section");
+    pageRef.current = pageNodes[index];
+    pageRef.current.scrollIntoView({behavior: 'instant', block: 'start'});
+  }
   return (
     <div class="middle1">
       <div class="skills_caption">
         <h2>Hard Skills; Programming Languages</h2>
         <h1>Cultivating Skills from University of Washington and Self-Learning</h1>
         <h2> {currDate()} | By Nazim Zerrouki </h2>
-        <img src="https://th.bing.com/th/id/OIP.yTTXFy8v6rxWZa5_UrH2zgHaEu?rs=1&pid=ImgDetMain"/>
+        <img src="https://th.bing.com/th/id/OIP.yTTXFy8v6rxWZa5_UrH2zgHaEu?rs=1&pid=ImgDetMain" 
+        onClick={() => scrollToIndex(2)}/>
       </div>
       <div class="about_caption">
         <h2>Learn More | Nazim Zerrouki</h2>
-        <img src="https://th.bing.com/th/id/OIP.c4PlYExpbBZ_LezJEczzFAHaDt?rs=1&pid=ImgDetMain"/>
+        <img src="https://th.bing.com/th/id/OIP.c4PlYExpbBZ_LezJEczzFAHaDt?rs=1&pid=ImgDetMain"
+        onClick={() => scrollToIndex(1)}/>
       </div>
       <div class="tips_caption">
         <h2> Learn About What It Takes | Nazim Zerrouki </h2>
-        <img src="https://thumbs.dreamstime.com/b/question-mark-6906191.jpg"/>
+        <img src="https://thumbs.dreamstime.com/b/question-mark-6906191.jpg"
+        onClick={() => scrollToIndex(4)}/>
       </div>
       <div class="purpose_caption">
         <h2> The Objective | Nazim Zerrouki </h2>
-        <img src="https://www.goalcast.com/wp-content/uploads/2017/05/purpose.jpg"/>
+        <img src="https://www.goalcast.com/wp-content/uploads/2017/05/purpose.jpg"
+        onClick={() => scrollToIndex(3)}/>
       </div>
     </div>
   )
@@ -205,8 +206,8 @@ function RightBorder() {
 
 const PurposePage = () => {
   return (
-    <div class="purpose_page" id="purpose_page">
-      <div class="purpose_section">
+    <div class="purpose_page" id="page">
+      <div class="section" id="purpose_section">
         <h2>Purpose</h2>
         <br/>
         <h3> <p>I enjoyed my time developing multiple programming skills at Univerisity of Washington, Tacoma.
@@ -240,68 +241,47 @@ const PurposePage = () => {
 
 const AboutPage = (props) => {
   return (
-    <div class="about_page" id="about_page"> 
-      <h2> About Me </h2>
-      <br/>
-      <div class="about_img">
-        <img src="https://i.imgur.com/FpV5ylC.jpg?1" alt="Profile pic"/>
-      </div>
-      <div class="about_section">
-        <h3> I am a recent graduate who successfully completed the graduate program for Computer Science & Systems
-        at University of Washington, Tacoma. I am an aspiring software developer ready to enter the industry 
-        with a passion for developing new skills, working with big companies, and with the zeal to change the world.
-        I am a very easy-going person who is very easy to communicate and collaborate with. On my spare time, I enjoy 
-        learning new programming languages and frameworks to work on personal projects such as this, working out for 
-        physical health and mental clarity, playing Chess, and playing video games from time to time. 
+    <div class="about_page" id="page"> 
+      <div class="section">
+        <h2> About Me </h2>
         <br/>
-        <br/>
+        <div class="about_img">
+          <img src="https://i.imgur.com/FpV5ylC.jpg?1" alt="Profile pic"/>
+        </div>
+        <div class="about_section">
+          <h3> I am a recent graduate who successfully completed the graduate program for Computer Science & Systems
+          at University of Washington, Tacoma. I am an aspiring software developer ready to enter the industry 
+          with a passion for developing new skills, working with big companies, and with the zeal to change the world.
+          I am a very easy-going person who is very easy to communicate and collaborate with. On my spare time, I enjoy 
+          learning new programming languages and frameworks to work on personal projects such as this, working out for 
+          physical health and mental clarity, playing Chess, and playing video games from time to time. 
+          <br/>
+          <br/>
 
-        Education:
+          Education:
 
-        <ul>
-          <li>University of Washington, Tacoma. Bachelors' of Science in Computer Science and Systems, Sept 2016-June 2020.</li>
-          <li>University of Washington, Tacoma. Masters' of Science in Computer Science and Systems, Sept 2020-Mar 2023.</li>
-        </ul>
+          <ul>
+            <li>University of Washington, Tacoma. Bachelors' of Science in Computer Science and Systems, Sept 2016-June 2020.</li>
+            <li>University of Washington, Tacoma. Masters' of Science in Computer Science and Systems, Sept 2020-Mar 2023.</li>
+          </ul>
 
-        <br/>
-        <br/>
-        For more information and inquiries, please get in touch with me. &nbsp;&nbsp;&nbsp;&nbsp;
-        <button onClick={() => (window.location.replace(props.link))}>Contact Me</button>
-        </h3>
+          <br/>
+          <br/>
+          For more information and inquiries, please get in touch with me. &nbsp;&nbsp;&nbsp;&nbsp;
+          <button onClick={() => (window.location.replace(props.link))}>Contact Me</button>
+          </h3>
+        </div>
       </div>
     </div>
   )
 }
 
-/*const SkillsPage = () => {
-  return (
-    <div class="skills_page" id="skills_page">
-      <h2>Skills</h2>
-      <br/>
-      <h3>
-        <ul>
-          <li>Object Oriented Programming (Java, JavaScript, Python)</li>
-          <li>Algorithms (Dynammic Programming & Recursion) </li>
-          <li>Machine Learning (Model-Free, Model-Based, Deep Learning)</li>
-          <li>Data Science</li>
-          <li>Web Programming (HTML, CSS, Node.js, React)</li>
-          <li>Database Design (SQL, Oracle) </li>
-          <li>Full Stack Development (HTML, CSS, Node.js, PHP, React) </li>
-
-        </ul>
-      </h3>
-    </div>
-  )
-}*/
-/*https://th.bing.com/th/id/OIP.KJd-DqNgLur33Btzcsg3KQHaHA?rs=1&pid=ImgDetMain
-https://www.pngfind.com/mpng/ihRRxmR_communication-integrated-marketing-communication-icon-hd-png-download/*/
-
 const SkillsPage = () => {
   return (
-    <div class="skills_page" id="skills_page">
+    <div class="skills_page" id="page">
       <h2>Skills</h2>
       <br/>
-      <div class="skills_section">
+      <div class="section" id="skills_section">
         <div class="hard_skills">
           <h3>Hard Skills</h3>
           <img src="https://static.vecteezy.com/system/resources/previews/014/541/527/original/administrator-system-icon-simple-style-vector.jpg"></img>
@@ -363,9 +343,9 @@ const SkillsPage = () => {
 
 const TipsPage = () => {
   return (
-    <div class="tips_page" id="tips_page">
+    <div class="tips_page" id="page">
       <h2>Tips & Strategies</h2>
-      <div class="tips_section">
+      <div class="section" id="tips_section">
         <img class="collab" src="https://nazimz99.github.io/UW-CS_Experience/img/teamwork.png"/>
         <ul>
           <li>
@@ -413,10 +393,10 @@ const TipsPage = () => {
 
 const ContactsPage = () => {
   return (
-    <div class="contacts_page" id="contacts_page">
+    <div class="contacts_page" id="page">
       <h4> Get Connected </h4>
       <h2>Contact Me</h2>
-      <div class="contacts_section">
+      <div class="section" id="contacts_section">
         <div class="email">
           <img src="https://th.bing.com/th/id/OIP.Z2lotQUlRFaoqY7m3Ma89QHaHa?rs=1&pid=ImgDetMain"></img>
           <a href = "mailto:nazerrouki@gmail.com"><h3>nazerrouki@gmail.com</h3></a>
@@ -445,19 +425,52 @@ function Main() {
   return (
     <div class="main"> 
       <Bar />
-      <hr class="top"/>
+      <hr class="divider"/>
       <Title name="Nazim"/>
       <Menu />
-      <Header id="purpose_page"/>
+      <Header name="about_page"/>
       <Middle1 />
       <br />
       <Content />
+      <Footer />
     </div>
   ) 
 }
 
 function Footer() {
-  
+  const pageRef = useRef(null);
+  function scrollToIndex(index) {
+    const pageNodes = document.querySelectorAll("#page > div.section");
+    pageRef.current = pageNodes[index];
+    pageRef.current.scrollIntoView({behavior: 'instant', block: 'start'});
+  }
+  return (
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_image">
+          <img src="https://logodix.com/logo/564987.png"></img>
+        </div>
+        <div class="footer_section">
+          <div class="footer_links">
+            <nav>
+              <a onClick={() => scrollToIndex(0)}>Home</a>
+              <a onClick={() =>scrollToIndex(1)}>About</a>
+              <a onClick={() =>scrollToIndex(2)}>Skills</a>
+              <a onClick={() =>scrollToIndex(3)}>Purpose</a>
+              <a onClick={() =>scrollToIndex(4)}>Tips</a>
+              <a onClick={() =>scrollToIndex(5)}>Contact</a>
+            </nav>
+          </div>
+          <div class="footer_logos">
+            <Socials/>
+          </div>
+        </div>
+        <div class="copyright">
+          <h1>2024 Nazim Zerrouki | All Rights Reserved</h1>
+        </div>
+      </div>
+    </footer>
+  )
 }
 
 function App() {
